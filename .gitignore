@@ -79,7 +79,7 @@ StyleCopReport.xml
 *_p.c
 *_h.h
 *.ilk
-*.meta
+#*.meta
 *.obj
 *.iobj
 *.pch
@@ -482,5 +482,7 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
-baciar.meta.cli/appsettings.Development.json
+#baciar.meta.cli/appsettings.Development.json
 .mono/registry/CurrentUser/software/microsoft/csdevkit/v1/pids/27786_133579986360142933/values.xml
+baciar.meta.cli/appsettings.Development.json
+baciar.meta/.mono/registry/CurrentUser/software/microsoft/csdevkit/telemetry/persistentpropertybag/microsoft.visualstudio.code.servicehost/values.xml
