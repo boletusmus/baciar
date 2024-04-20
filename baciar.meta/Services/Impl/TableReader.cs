@@ -3,19 +3,19 @@ using baciar.meta.Model;
 using Npgsql;
 
 namespace baciar.meta.Services.Impl;
-public class TableGenerator : ITableGenerator
+public class TableReader : ITableReader
 {
     private readonly NpgsqlDataSource dataSource;
-    private readonly BaseGenerator<TableItem> generator;
+    private readonly BaseReader<TableItem> reader;
 
-    public TableGenerator(NpgsqlDataSource dataSource)
+    public TableReader(NpgsqlDataSource dataSource)
     {
         this.dataSource = dataSource;
-        generator = new BaseGenerator<TableItem>();
+        reader = new BaseReader<TableItem>();
     }
-    public async Task<IEnumerable<TableItem>> GenerateAsync(string[] schemas)
+    public async Task<IEnumerable<TableItem>> ReadAsync(string[] schemas)
     {
-        return await generator.GenerateAsync(
+        return await reader.ReadAsync(
             dataSource, 
             schemas, 
             (name)=>$"select table_schema,table_name from information_schema.tables where table_schema='{name}';",
