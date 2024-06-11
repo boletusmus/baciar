@@ -18,6 +18,7 @@
 
 # Mono auto generated files
 mono_crash.*
+.mono/
 
 # Build results
 [Dd]ebug/
@@ -487,3 +488,6 @@ $RECYCLE.BIN/
 baciar.meta.cli/appsettings.Development.json
 baciar.meta/.mono/registry/CurrentUser/software/microsoft/csdevkit/telemetry/persistentpropertybag/microsoft.visualstudio.code.servicehost/values.xml
 .mono/registry/CurrentUser/software/microsoft/csdevkit/telemetry/persistentpropertybag/microsoft.visualstudio.code.servicehost/values.xml
+.mono/registry/CurrentUser/software/microsoft/sqmclient/values.xml
+.mono/registry/CurrentUser/software/microsoft/csdevkit/telemetry/persistentpropertybag/microsoft.visualstudio.code.servicehost/values.xml
+.mono/registry/CurrentUser/software/microsoft/csdevkit/telemetry/persistentpropertybag/values.xml

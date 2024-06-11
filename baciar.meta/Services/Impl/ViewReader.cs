@@ -4,19 +4,19 @@ using Npgsql;
 
 namespace baciar.meta.Services.Impl;
 
-public class ViewGenerator : IViewGenerator
+public class ViewReader : IViewReader
 {
     private readonly NpgsqlDataSource dataSource;
-    private readonly BaseGenerator<ViewItem> generator;
+    private readonly BaseReader<ViewItem> reader;
 
-    public ViewGenerator(NpgsqlDataSource dataSource)
+    public ViewReader(NpgsqlDataSource dataSource)
     {
         this.dataSource = dataSource;
-        generator = new BaseGenerator<ViewItem>();
+        reader = new BaseReader<ViewItem>();
     }
-    public async Task<IEnumerable<ViewItem>> GenerateAsync(string[] schemas)
+    public async Task<IEnumerable<ViewItem>> ReadAsync(string[] schemas)
     {
-        return await generator.GenerateAsync(
+        return await reader.ReadAsync(
             dataSource, 
             schemas, 
             (name)=>$"select table_schema,table_name,view_definition from information_schema.views where table_schema='{name}';",

@@ -3,10 +3,10 @@ using Npgsql;
 
 namespace baciar.meta.Services.Impl;
 
-public class BaseGenerator<Dto>
+public class BaseReader<Dto>
 where Dto:class
 {
-    internal async Task<IEnumerable<Dto>> GenerateAsync(NpgsqlDataSource dataSource, string[] schemas, Func<string,string> createQuery, Func<DbDataReader, Dto> read)
+    internal async Task<IEnumerable<Dto>> ReadAsync(NpgsqlDataSource dataSource, string[] schemas, Func<string,string> createQuery, Func<DbDataReader, Dto> read)
     {
         var data = new List<Dto>();
         if(schemas.Any())
